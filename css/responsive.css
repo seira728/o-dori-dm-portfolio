@@ -158,28 +158,34 @@ SP nav
   /* サブメニュー */
   .sp_nav_sub {
     display: none;
+    grid-template-columns: repeat(2, 1fr);
     background: var(--pale);
   }
   .sp_nav_item.active .sp_nav_sub {
-    display: block;
+    display: grid;
+    padding: 0 25px;
   }
   .sp_nav_sub a {
     display: flex;
+    justify-content: center;
     align-items: center;
     min-height: 52px;
-    padding: 0 25px 0 45px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 14px;
-    text-decoration: none;
-  }
-  .sp_nav_sub a::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    margin-right: 10px;
-    border-radius: 50%;
+    padding: 0 10px;
+    border-top: 1px solid var(--white);
+    border-right: 1px solid var(--white);
     background: var(--blue);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .sp_nav_sub a:last-child {
+    grid-column: 1 / 2;
+  }
+  .sp_nav_sub a:active {
+    opacity: 0.8;
   }
 
   /* メニュー表示中：背面スクロール防止 */
