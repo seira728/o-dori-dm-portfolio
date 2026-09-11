@@ -18,6 +18,174 @@ TOPページ
 }
 
 @media screen and (max-width: 960px) {
+/**********************************************
+header
+**********************************************/
+  .header{
+    position: fixed;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  .header_logo img {
+      width: 80%;
+  }
+  .header_right{
+    display: none;
+  }
+
+/**********************************************
+PC nav
+**********************************************/
+  .global_nav {
+    display: none;
+  }
+
+/**********************************************
+SP nav
+**********************************************/
+  .hamburger {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    z-index: 1001;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: var(--deep);
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  /* ハンバーガー → × */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* SPナビ */
+  .sp_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    padding-top: 80px;
+    background: var(--white);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+  }
+  .sp_nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .sp_nav_inner {
+    width: 100%;
+  }
+
+  /* 通常リンク */
+  .sp_nav_link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 62px;
+    padding: 0 25px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* アコーディオン */
+  .sp_nav_item {
+    border-bottom: 1px solid var(--line);
+  }
+  .sp_nav_toggle {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 62px;
+    padding: 0 25px;
+    border: none;
+    background: var(--white);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  /* 矢印 */
+  .sp_nav_toggle i {
+    font-size: 13px;
+    transition: transform 0.3s ease;
+  }
+  .sp_nav_item.active .sp_nav_toggle i {
+    transform: rotate(180deg);
+  }
+
+  /* サブメニュー */
+  .sp_nav_sub {
+    display: none;
+    background: var(--pale);
+  }
+  .sp_nav_item.active .sp_nav_sub {
+    display: block;
+  }
+  .sp_nav_sub a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 25px 0 45px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .sp_nav_sub a::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+
+  /* メニュー表示中：背面スクロール防止 */
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -35,12 +203,17 @@ common
   }
 
 /**********************************************
-PC nav
+table
 **********************************************/
-  .global_nav {
-    display: none;
+  .table1 th{
+    display: block;
+    width: 100%;
+    border: none;
   }
-  
+  .table1 td{
+    display: block;
+  }
+
 /**********************************************
 TOPページ
 **********************************************/
@@ -140,7 +313,20 @@ SPフローティングボタン
 	.sp-fixed-buttons {
 		display: grid;
 	}
+
+
+/**********************************************
+下層ページ_当院について
+**********************************************/
+/********** 医院案内 **********/
+  .about_clinic{
+    display: block;
+  }
+  .about_clinic img{
+    margin-bottom: 30px;
+  }
 }
+
 /**********************************************
 header
 **********************************************/

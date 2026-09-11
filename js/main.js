@@ -1,7 +1,80 @@
+
+
+
 // ========================================
 // ハンバーガーメニュー
 // ========================================
+document.addEventListener('DOMContentLoaded', () => {
 
+  const hamburger = document.querySelector('.hamburger');
+  const spNav = document.querySelector('.sp_nav');
+
+  if (!hamburger || !spNav) return;
+
+
+  // ----------------------------------------
+  // ハンバーガー開閉
+  // ----------------------------------------
+
+  hamburger.addEventListener('click', () => {
+
+    hamburger.classList.toggle('active');
+    spNav.classList.toggle('active');
+
+    const isOpen = hamburger.classList.contains('active');
+
+    hamburger.setAttribute('aria-expanded', isOpen);
+
+    document.body.classList.toggle('menu-open', isOpen);
+
+  });
+
+
+  // ----------------------------------------
+  // SPアコーディオン
+  // ----------------------------------------
+
+  const spNavItems = document.querySelectorAll('.sp_nav_item');
+
+  spNavItems.forEach(item => {
+
+    const toggle = item.querySelector('.sp_nav_toggle');
+
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+
+      item.classList.toggle('active');
+
+    });
+
+  });
+
+
+  // ----------------------------------------
+  // SPメニュー内のリンクをクリックしたら閉じる
+  // ----------------------------------------
+
+  const spLinks = document.querySelectorAll(
+    '.sp_nav_link, .sp_nav_sub a'
+  );
+
+  spLinks.forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      hamburger.classList.remove('active');
+      spNav.classList.remove('active');
+
+      hamburger.setAttribute('aria-expanded', 'false');
+
+      document.body.classList.remove('menu-open');
+
+    });
+
+  });
+
+});
 
 // ========================================
 // スマホ ドロップダウン

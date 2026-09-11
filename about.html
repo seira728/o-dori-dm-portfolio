@@ -38,9 +38,96 @@
 
     <main>
       <!------------ MV ------------>
-      <section class="sub_mv">
-        <div class="sub_mv_container">
-          <span>ABOUT US</span><h2>当院について</h2>
+      <section class="mv">
+        <div class="mv_slides">
+          <!-- slide 01 -->
+          <div class="mv_slide active">
+            <img src="img/mv01.webp" alt="大通り糖尿病・内科クリニック">
+            <div class="mv_overlay"></div>
+            <div class="mv_content">
+              <p class="mv_subtitle">DIABETES & INTERNAL MEDICINE</p>
+              <h2>
+                糖尿病とともに、<br>
+                より健やかな毎日を。
+              </h2>
+              <p class="mv_text">
+                専門性と安心を大切にした<br>
+                身近なクリニックです。
+              </p>
+            </div>
+          </div>
+          <!-- slide 02 -->
+          <div class="mv_slide">
+            <img src="img/mv02.webp" alt="糖尿病専門診療">
+            <div class="mv_overlay"></div>
+            <div class="mv_content">
+              <p class="mv_subtitle">DIABETES CARE</p>
+              <h2>
+                一人ひとりに寄り添う<br>
+                糖尿病診療。
+              </h2>
+              <p class="mv_text">
+                患者さまの生活に合わせた<br>
+                無理のない治療を目指します。
+              </p>
+            </div>
+          </div>
+          <!-- slide 03 -->
+          <div class="mv_slide">
+            <img src="img/mv03.webp" alt="生活習慣病の診療">
+            <div class="mv_overlay"></div>
+            <div class="mv_content">
+              <p class="mv_subtitle">LIFESTYLE DISEASE</p>
+              <h2>
+                健康な未来のために、<br>
+                今できることを。
+              </h2>
+              <p class="mv_text">
+                高血圧・脂質異常症など<br>
+                生活習慣病もご相談ください。
+              </p>
+            </div>
+          </div>
+          <!-- slide 04 -->
+          <div class="mv_slide">
+            <img src="img/mv04.webp" alt="安心して相談できる診療">
+            <div class="mv_overlay"></div>
+            <div class="mv_content">
+              <p class="mv_subtitle">FOR YOUR HEALTH</p>
+              <h2>
+                「相談してよかった」と<br>
+                思っていただける場所へ。
+              </h2>
+              <p class="mv_text">
+                丁寧な説明とコミュニケーションを<br>
+                大切にしています。
+              </p>
+            </div>
+          </div>
+          <!-- slide 05 -->
+          <div class="mv_slide">
+            <img src="img/mv05.webp" alt="通いやすいクリニック">
+            <div class="mv_overlay"></div>
+            <div class="mv_content">
+              <p class="mv_subtitle">CLINIC</p>
+              <h2>
+                通いやすく、<br>
+                続けやすい医療を。
+              </h2>
+              <p class="mv_text">
+                大通駅から徒歩圏内。<br>
+                お気軽にご来院ください。
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- ドット -->
+        <div class="mv_dots">
+          <button class="mv_dot active" type="button" aria-label="1枚目"></button>
+          <button class="mv_dot" type="button" aria-label="2枚目"></button>
+          <button class="mv_dot" type="button" aria-label="3枚目"></button>
+          <button class="mv_dot" type="button" aria-label="4枚目"></button>
+          <button class="mv_dot" type="button" aria-label="5枚目"></button>
         </div>
       </section>
 
@@ -75,10 +162,135 @@
         </div>
       </nav>
 
+      <!------------ SP hamburger ------------>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!------------ SP menu ------------>
+      <div class="sp_nav">
+        <div class="sp_nav_inner">
+          <a href="index.html" class="sp_nav_link">ホーム</a>
+          <div class="sp_nav_item">
+            <button class="sp_nav_toggle" type="button">
+              <span>当院について</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="sp_nav_sub">
+              <a href="about.html#diabetes">糖尿病</a>
+              <a href="about.html#lifestyle">生活習慣病</a>
+              <a href="about.html#internal">一般内科</a>
+            </div>
+          </div>
+          <a href="doctor.html" class="sp_nav_link">院長紹介</a>
+          <div class="sp_nav_item">
+            <button class="sp_nav_toggle" type="button">
+              <span>診療案内</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="sp_nav_sub">
+              <a href="diabetes.html">糖尿病</a>
+              <a href="lifestyle.html">生活習慣病</a>
+              <a href="internal.html">一般内科</a>
+            </div>
+          </div>
+          <a href="access.html" class="sp_nav_link">アクセス</a>
+        </div>
+      </div>
+
       <!------------ パンくず ------------>
       <div class="breadcrumbs">
         <a href="index.html"><i class="fa-solid fa-house"></i>ホーム</a>&nbsp;<i class="fa-solid fa-chevron-right"></i>&nbsp;当院について
       </div>
+
+      <!------------ 医院案内 ------------>
+      <section id="about0" class="about_">
+        <div class="container">
+          <div class="top_section_title">
+            <h2>医院案内</h2>
+            <span>CLINIC</span>
+          </div>
+          <div class="about_clinic">
+            <img src="img/gaikan.webp" alt="外観">
+            <table class="table1">
+              <tbody>
+                <tr>
+                  <th>医院名</th>
+                  <td>大通り糖尿病・内科クリニック</td>
+                </tr>
+                <tr>
+                  <th>所在地</th>
+                  <td>北海道札幌市中央区北1条西7丁目1番地　広井ビル1階</td>
+                </tr>
+                <tr>
+                  <th>電話番号</th>
+                  <td>011-205-0811</td>
+                </tr>
+                <tr>
+                  <th>FAX番号</th>
+                  <td>011-205-0822</td>
+                </tr>
+                <tr>
+                  <th>診療時間</th>
+                  <td>火曜日～土曜日<br>8:00～12:30、14:00〜16:00<br>※受付時間は午前12:00まで、午後15:30までとなります。</td>
+                </tr>
+                <tr>
+                  <th>休診日</th>
+                  <td>月曜日・日曜日・祝日</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!------------ 当院の医療機器 ------------>
+      <section id="about0" class="about_">
+        <div class="container">
+          <div class="top_section_title">
+            <h2>当院の医療機器</h2>
+            <span>FACILITY</span>
+          </div>
+          <div class="section_title">
+            <h3>院内設備</h3>
+          </div>
+          <div class="section_title">
+            <h4>当院で可能な検査</h4>
+          </div>
+          <ul class="indent-list">
+            <li>血糖、HbA1c測定</li>
+            <li>血算赤血球、白血球、血小板、肝機能AST、ALT、LD、総ビリルビン、γ-GT、ALP、総蛋白、尿素窒素、クレアチニン、Na、K、Cl、尿酸、中性脂肪、HDL-C、CPK、CRP（炎症反応）測定（院内測定）</li>
+          </ul>
+          <div class="section_title mt30">
+            <h4>外部検査会社札幌臨床検査センターで測定</h4>
+          </div>
+          <ul class="indent-list">
+            <li>尿定性検査</li>
+            <li>ブドウ糖負荷試験</li>
+            <li>尿中微量アルブミン/クレアチニン比検査（半定量）：糖尿病早期腎症を評価します（外部検査会社で測定）</li>
+            <li>身長・体重・腹囲測定</li>
+            <li>自動血圧計</li>
+            <li>心電図・CVR-R</li>
+            <li>脈波伝播速度（PWV）・足関節上腕血圧比（ABI）検査：動脈硬化を評価します</li>
+          </ul>
+          <div class="section_title mt30">
+            <h4>検査機器一覧</h4>
+          </div>
+          <ul class="indent-list">
+            <li>生化学（ドライケムNX-600i）</li>
+            <li>血糖値・HbA1c　(アダムスハイブリットAH-8290)</li>
+            <li>血液学（pocH-80i）</li>
+            <li>尿検査（US1200）</li>
+            <li>心電図・血圧脈波検査装置（VaSera VS-2000）</li>
+          </ul>
+          <div class="section_title mt50">
+            <h3>設備ギャラリー</h3>
+          </div>
+        </div>
+      </section>
 
       <!------------ 保険医療機関における書面掲示 ------------>
       <section id="about0" class="about_">
