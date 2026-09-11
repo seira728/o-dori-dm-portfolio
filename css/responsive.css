@@ -88,11 +88,14 @@ SP nav
     left: 0;
     z-index: 1000;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: block;
-    padding-top: 80px;
+    box-sizing: border-box;
+    padding: 80px 0;
     background: var(--white);
+    overflow-x: hidden;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     opacity: 0;
     visibility: hidden;
     transform: translateX(100%);
@@ -108,6 +111,8 @@ SP nav
   }
   .sp_nav_inner {
     width: 100%;
+    min-height: max-content;
+    padding-bottom: 30px;
   }
 
   /* 通常リンク */
