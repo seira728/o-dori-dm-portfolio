@@ -236,7 +236,7 @@ table
 /**********************************************
 TOPページ
 **********************************************/
-/********** MV **********/
+  /********** MV **********/
   .mv {
     height: calc(100svh - 65px);
     min-height: 560px;
@@ -266,7 +266,7 @@ TOPページ
     bottom: 42px;
   }
 
-/********** h2 **********/
+  /********** h2 **********/
   .top_section_title{
     margin-bottom: 30px;
   }
@@ -305,7 +305,7 @@ TOPページ
   .top_feature_content h3 {
     font-size: 22px;
   }
-  
+
 /********** 診療案内 **********/
   .top_medical_items{
     display: grid;
