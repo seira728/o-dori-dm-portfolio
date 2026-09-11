@@ -197,6 +197,14 @@ SP nav
   body.menu-open {
     overflow: hidden;
   }
+
+  /* タップ時の水色ハイライトを消す */
+  .hamburger,
+  .sp_nav_toggle,
+  .sp_nav a {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+  }
 }
 
 @media screen and (max-width: 768px) {
