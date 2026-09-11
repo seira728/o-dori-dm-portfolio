@@ -28,7 +28,7 @@ p{
 .container{
   width: min(1200px, calc(100% - 50px));
   margin: auto;
-  padding-top: 100px;
+  padding: 100px 0;
 }
 /*.container:last-child {
   padding-bottom: 100px;
