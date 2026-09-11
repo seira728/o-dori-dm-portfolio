@@ -181,9 +181,9 @@ SP nav
     text-decoration: none;
     transition: background 0.3s ease;
   }
-  .sp_nav_sub a:last-child {
+  /*.sp_nav_sub a:last-child {
     grid-column: 1 / 2;
-  }
+  }*/
   .sp_nav_sub a:active {
     opacity: 0.8;
   }
