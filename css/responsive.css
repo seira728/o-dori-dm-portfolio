@@ -22,6 +22,19 @@ TOPページ
 
 @media screen and (max-width: 768px) {
 /**********************************************
+common
+**********************************************/
+  .container{
+    padding-top: 70px;
+  }
+  .container:last-of-type {
+    padding-bottom: 70px;
+  }
+  .sp-only-br {
+    display: block;
+  }
+
+/**********************************************
 PC nav
 **********************************************/
   .global_nav {
@@ -61,10 +74,30 @@ TOPページ
     bottom: 42px;
   }
 
-/********** 当院の特徴 **********/
-  .top_feature {
-    padding: 70px 20px;
+/********** h2 **********/
+  .top_section_title{
+    margin-bottom: 30px;
   }
+
+  /********** インフォメーション **********/
+  .top_info {
+      background: var(--bg);
+      padding-bottom: 70px;
+  }
+  .top_info_inner{
+    grid-template-columns: repeat(1, 1fr);
+    padding: 70px 0 30px;
+  }
+  .top_info_inner .top_section_title{
+    text-align: center;
+  }
+
+  /* 『かぜ症状』で受診される方へ */
+  .top_cold_txt{
+    text-align: left;
+  }
+
+/********** 当院の特徴 **********/
   .top_feature_item,
   .top_feature_item:nth-child(even) {
     flex-direction: column-reverse;

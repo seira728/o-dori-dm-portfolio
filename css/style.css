@@ -22,13 +22,110 @@ a:hover{
 p{
   line-height: 2;
 }
+.red{
+  color: #ff0000;
+}
 .container{
   width: min(1200px, calc(100% - 50px));
   margin: auto;
   padding-top: 100px;
 }
-.container:last-of-type {
+/*.container:last-child {
   padding-bottom: 100px;
+}*/
+.mt20{
+  margin-top: 20px;
+}
+.mt30{
+  margin-top: 30px;
+}
+.mt40{
+  margin-top: 40px;
+}
+.mt50{
+  margin-top: 50px;
+}
+.mb20{
+  margin-bottom: 20px;
+}
+.mb30{
+  margin-bottom: 30px;
+}
+.mb40{
+  margin-bottom: 40px;
+}
+.mb50{
+  margin-bottom: 50px;
+}
+.sp-only-br {
+  display: none;
+}
+
+/**********************************************
+scroll animation
+**********************************************/
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/**********************************************
+title
+**********************************************/
+/*h2*/
+.top_section_title{
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 0.15em;
+}
+.top_section_title h2{
+  font-family: var(--serif);
+  font-size: 35px;
+}
+.top_section_title span{
+  font-size: 14px;
+  color: var(--teal);
+  font-weight: 500;
+}
+/*h3*/
+.section_title h3{
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+  background: var(--blue);
+  border-radius: 5px;
+  color: var(--white);
+  padding: 15px;
+  font-size: 22px;
+  font-weight: 500;
+}
+/*h4*/
+.section_title h4{
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--blue);
+  color: var(--blue);
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/**********************************************
+list
+**********************************************/
+.indent-list {
+  margin: 0;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+.indent-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 /**********************************************
@@ -295,26 +392,96 @@ TOPページ
   background: #fff;
 }
 
-/*h2*/
-.top_section_title{
-  text-align: center;
-  margin-bottom: 50px;
-  letter-spacing: 0.15em;
+/********** インフォメーション **********/
+.top_info{
+  background: var(--bg);
+  padding-bottom: 100px;
 }
-.top_section_title h2{
-  font-family: var(--serif);
-  font-size: 35px;
+.top_info_inner{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  width: min(1200px, calc(100% - 50px));
+  margin: auto;
+  padding: 100px 0 50px;
 }
-.top_section_title span{
-  font-size: 14px;
+.top_info_inner .top_section_title{
+  text-align: left;
+}
+.top_info_inner .top_section_title span{
+  text-align: center!important;
+}
+/*お知らせ*/
+.top_info_news{
+  background: var(--white);
+  padding: 20px;
+  height: 400px;
+  overflow: auto;
+}
+.top_info_news dl{
+  margin-bottom: 30px;
+}
+.top_info_news dt{
+  margin-bottom: 10px;
+}
+.top_info_news .info_date{
+  margin-right: 15px;
+}
+.top_info_news strong{
   color: var(--teal);
+}
+/*医院概要*/
+.hours {
+  display: grid;
+  grid-template-columns: 95px repeat(7,1fr);
+  font-size: 14px;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 20px;
+}
+.hours span {
+  text-align: left
+}
+.hours i {
+  font-style: normal;
+  color: var(--teal);
+}
+.top_info_right .address{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.top_info_right .top_button{
+  margin: 20px auto;
+}
+.hours_txt{
+  line-height: 1.5;
+  margin-top: 10px;
+}
+/* 『かぜ症状』で受診される方へ */
+.top_cold_inner{
+  border: 2px solid #af6b6b;
+  width: min(1200px, calc(100% - 50px));
+  margin: auto;
+  background: var(--white);
+}
+.top_cold_title{
+  background: #af6b6b;
+  text-align: center;
+  color: var(--white);
+  padding: 10px;
+  font-size: 20px;
   font-weight: 500;
+}
+.top_cold_txt{
+  padding: 20px;
+  text-align: center;
 }
 
 /********** 当院の特徴 **********/
 .top_feature {
   margin: 0 auto;
-  padding: 100px 30px;
   background: var(--section);
 }
 .top_feature_item {
@@ -389,14 +556,15 @@ TOPページ
   color: #fff;
   text-align: center;
   transition: 0.3s ease;
+  font-size: 15px;
+  gap: 10px;
 }
 .top_medical_item:hover{
-  border: 1px solid var(--light-blue);
-  background: var(--white);
-  color: var(--light-blue);
-  opacity: 1;
+  transform: translateY(-3px);
 }
-
+.top_medical_item img{
+  width: 50%;
+}
 
 /**********************************************
 header
