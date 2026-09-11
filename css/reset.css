@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+  color: #555;
+}
+body,
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+button {
+  border: none;
+  background: none;
+}

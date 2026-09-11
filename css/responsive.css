@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 1024px) {
+/**********************************************
+TOPページ
+**********************************************/
+/********** MV **********/
+  .mv {
+    height: 500px;
+    min-height: auto;
+  }
+  .mv_content {
+    left: 50px;
+  }
+  .mv_content h2 {
+    font-size: 44px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 768px) {
+/**********************************************
+PC nav
+**********************************************/
+  .global_nav {
+    display: none;
+  }
+  
+/**********************************************
+TOPページ
+**********************************************/
+/********** MV **********/
+  .mv {
+    height: calc(100svh - 65px);
+    min-height: 560px;
+  }
+  .mv_content {
+    top: auto;
+    left: 25px;
+    right: 25px;
+    bottom: 100px;
+    transform: none;
+  }
+  .mv_subtitle {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+  .mv_content h2 {
+    font-size: 30px;
+    line-height: 1.55;
+  }
+  .mv_text {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .mv_dots {
+    bottom: 42px;
+  }
+
+/********** 当院の特徴 **********/
+  .top_feature {
+    padding: 70px 20px;
+  }
+  .top_feature_item,
+  .top_feature_item:nth-child(even) {
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  .top_feature_image {
+    width: 100%;
+  }
+  .top_feature_content {
+    width: 100%;
+  }
+  .top_feature_content h3 {
+    font-size: 22px;
+  }
+  
+/********** 診療案内 **********/
+  .top_medical_items{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+/**********************************************
+TOPへ戻るボタン
+**********************************************/
+  .page-top {
+      right: 15px;
+      bottom: 90px;
+      width: 45px;
+      height: 45px;
+  }
+
+/**********************************************
+SPフローティングボタン
+**********************************************/
+	body {
+		margin-bottom: 80px;
+	}
+	.sp-fixed-buttons {
+		display: grid;
+	}
+}
+/**********************************************
+header
+**********************************************/
+
+/**********************************************
+footer
+**********************************************/
