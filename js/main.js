@@ -87,8 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //固定
 document.addEventListener('DOMContentLoaded', () => {
   const globalNav = document.querySelector('.global_nav');
-  const mv = document.querySelector('.mv');
-  if (!globalNav || !mv) return;
+  if (!globalNav) return;
   const navTop = globalNav.offsetTop;
   window.addEventListener('scroll', () => {
     if (window.scrollY >= navTop) {
