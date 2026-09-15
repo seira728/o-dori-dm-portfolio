@@ -142,11 +142,12 @@
             </button>
             <div class="global_nav_sub">
               <a href="about.html#about01">医院案内</a>
-              <a href="about.html">当院の医療機器</a>
-              <a href="about.html">書面掲示</a>
-              <a href="about.html">提携病院</a>
+              <a href="about.html#about02">当院の医療機器</a>
+              <a href="about.html#about03">書面掲示</a>
+              <a href="about.html#about04">提携病院</a>
             </div>
           </div>
+          <a href="guide.html">受診案内</a>
           <a href="doctor.html">院長紹介</a>
           <div class="global_nav_item">
             <button class="global_nav_toggle">
@@ -193,6 +194,7 @@
               <a href="about.html">提携病院</a>
             </div>
           </div>
+          <a href="guide.html" class="sp_nav_link">受診案内</a>
           <a href="doctor.html" class="sp_nav_link">院長紹介</a>
           <div class="sp_nav_item">
             <button class="sp_nav_toggle" type="button">
@@ -274,12 +276,46 @@
               </a>
               <a href="https://ssc5.doctorqube.com/odori-dm-clinic/"><img src="img/doctorqube_bnr.webp" alt="インターネット診療予約はこちらから！"></a>
             </div>
-            <div class="hours fade-up">
-              <span>診療時間</span>
-              <b>月</b><b>火</b><b>水</b><b>木</b><b>金</b><b>土</b><b>日</b>
-              <span>08:00～12:30</span><i>／</i><i>●</i><i>●</i><i>●</i><i>●</i><i>●</i><i>／</i>
-              <span>14:00〜16:00</span><i>／</i><i>●</i><i>●</i><i>●</i><i>●</i><i>●</i><i>／</i>
-            </div>
+            <table class="hours fade-up">
+              <colgroup>
+                <col class="hours_time">
+                <col class="hours_day" span="7">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>診療時間</th>
+                  <th>月</th>
+                  <th>火</th>
+                  <th>水</th>
+                  <th>木</th>
+                  <th>金</th>
+                  <th>土</th>
+                  <th>日</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>08:00～12:30</th>
+                  <td class="closed">／</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="closed">／</td>
+                </tr>
+                <tr>
+                  <th>14:00～16:00</th>
+                  <td class="closed">／</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="open">●</td>
+                  <td class="closed">／</td>
+                </tr>
+              </tbody>
+            </table>
             <p class="hours_txt fade-up">休診日：月曜日・日曜日・祝日<br>※受付時間は午前12:00まで、午後15:30まで<br>※予約制での診療となります</p>
           </div>
         </div>
@@ -298,7 +334,7 @@
       
       <!------------ 当院の特徴 ------------>
       <section class="top_feature">
-        <div class="container">
+        <div class="container container_last">
           <div class="top_section_title">
             <h2>当院の特徴</h2>
             <span>FEATURE</span>
@@ -433,7 +469,7 @@
       </section>
 
       <!------------ 糖尿病内科について ------------>
-      <section class="top_medical container">
+      <section class="top_medical container container_last">
         <div class="top_medical_inner">
           <div class="top_section_title">
             <h2>糖尿病内科について</h2>

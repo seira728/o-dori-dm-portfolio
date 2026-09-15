@@ -212,9 +212,9 @@ SP nav
 common
 **********************************************/
   .container{
-    padding-top: 70px;
+    padding: 70px 0 0;
   }
-  .container:last-of-type {
+  .container_last {
     padding-bottom: 70px;
   }
   .sp-only-br {
@@ -344,6 +344,39 @@ SPフローティングボタン
   .about_clinic img{
     margin-bottom: 30px;
   }
+
+/********** 診療時間 **********/
+  .about_clinichour .hours .hours_time {
+      width: 130px;
+  }
+
+/**********************************************
+下層ページ_院長紹介
+**********************************************/
+/********** ご挨拶 **********/
+.doctor_greeting_flex{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/********** 経歴 **********/
+.doctor_career_items{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/**********************************************
+下層ページ_アクセス
+**********************************************/
+.access_map_flex{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+.access_map_flex img{
+  margin: 0 auto;
 }
 
 /**********************************************
@@ -353,3 +386,5 @@ header
 /**********************************************
 footer
 **********************************************/
+
+}

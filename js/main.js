@@ -225,3 +225,162 @@ if (pageTop) {
   });
 }
 
+// ========================================
+// 当院について＿カルーセル
+// ========================================
+const carousels = document.querySelectorAll('.carousel');
+
+carousels.forEach((carousel) => {
+  const carouselContainer = carousel.querySelector('.carousel__slides');
+  const carouselDots = carousel.querySelectorAll('.carousel__dot');
+  const carouselPrevButton = carousel.querySelector('.carousel__button--prev');
+  const carouselNextButton = carousel.querySelector('.carousel__button--next');
+
+  if (
+    !carouselContainer ||
+    !carouselDots.length ||
+    !carouselPrevButton ||
+    !carouselNextButton
+  ) {
+    return;
+  }
+
+  let carouselSlides = carouselContainer.querySelectorAll('.carousel__slide');
+  const carouselCount = carouselSlides.length;
+
+  let carouselCurrent = 0;
+  let carouselTimer;
+  let isAnimating = false;
+
+  if (carouselCount <= 1) return;
+
+  // 最初のスライドを複製
+  const firstSlideClone = carouselSlides[0].cloneNode(true);
+  carouselContainer.appendChild(firstSlideClone);
+  carouselSlides = carouselContainer.querySelectorAll('.carousel__slide');
+
+  // ========================================
+  // カルーセル移動
+  // ========================================
+
+  function moveCarousel(animate = true) {
+    carouselContainer.style.transition = animate
+      ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+      : 'none';
+
+    carouselContainer.style.transform = `translateX(-${carouselCurrent * 100}%)`;
+
+    // ドット更新
+    carouselDots.forEach((dot, index) => {
+      dot.classList.toggle(
+        'active',
+        index === carouselCurrent % carouselCount
+      );
+    });
+  }
+
+  // ========================================
+  // 次へ
+  // ========================================
+
+  function nextCarousel() {
+    if (isAnimating) return;
+
+    isAnimating = true;
+    carouselCurrent++;
+    moveCarousel(true);
+
+    // 最後のクローンまで到達したら最初へ戻す
+    if (carouselCurrent === carouselCount) {
+      setTimeout(() => {
+        carouselCurrent = 0;
+        moveCarousel(false);
+        isAnimating = false;
+      }, 800);
+    } else {
+      setTimeout(() => {
+        isAnimating = false;
+      }, 800);
+    }
+  }
+
+  // ========================================
+  // 前へ
+  // ========================================
+
+  function prevCarousel() {
+    if (isAnimating) return;
+
+    isAnimating = true;
+
+    if (carouselCurrent === 0) {
+      // 一旦クローンの位置へ移動
+      carouselCurrent = carouselCount;
+      moveCarousel(false);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          carouselCurrent = carouselCount - 1;
+          moveCarousel(true);
+        });
+      });
+    } else {
+      carouselCurrent--;
+      moveCarousel(true);
+    }
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 800);
+  }
+
+  // ========================================
+  // 自動再生
+  // ========================================
+
+  function startCarousel() {
+    carouselTimer = setInterval(nextCarousel, 5000);
+  }
+
+  function restartCarousel() {
+    clearInterval(carouselTimer);
+    startCarousel();
+  }
+
+  // ========================================
+  // ボタン
+  // ========================================
+
+  carouselNextButton.addEventListener('click', () => {
+    nextCarousel();
+    restartCarousel();
+  });
+
+  carouselPrevButton.addEventListener('click', () => {
+    prevCarousel();
+    restartCarousel();
+  });
+
+  // ========================================
+  // ドット
+  // ========================================
+
+  carouselDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      if (
+        isAnimating ||
+        index === carouselCurrent % carouselCount
+      ) {
+        return;
+      }
+
+      carouselCurrent = index;
+      moveCarousel(true);
+      restartCarousel();
+    });
+  });
+
+  // 初期状態
+  moveCarousel(false);
+  startCarousel();
+});
